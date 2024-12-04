@@ -63,8 +63,12 @@ console.log('Exercise 4 correct result: ', {
 /* -------------------- Exercise 5 -------------------- */
 let firstLast = [];
 
-firstLast = people.map((person) => {
-    
+const splitPeople = people.map((person) => {
+    return person.split(",");
+});
+
+splitPeople.forEach(person => {
+  firstLast.push(`${person[1].trim()} ${person[0]}`); // Trim to elemenate the space at the beginning of the first name
 });
 
 console.log('Exercise 5 my result: ', firstLast);
@@ -113,12 +117,56 @@ console.log('Exercise 5 correct result: ', [
 
 
 /* -------------------- Exercise 6 -------------------- */
+let isAdultPresent = null;
+
+isAdultPresent = devs.some((dev) => {
+  if(dev.year < 2006) {
+    return false;
+  } else {
+    return true;
+  }
+});
+
+console.log('Exercise 6 my result: ', isAdultPresent);
+console.log('Exercise 6 correct result: ', true);
 
 
 /* -------------------- Exercise 7 -------------------- */
+let isEveryone19OrOlder = null;
+
+isEveryone19OrOlder = devs.every((dev) => {
+  if(dev.year < 2006) {
+    return true;
+  } else {
+    return false;
+  }
+});
+
+console.log('Exercise 7 my result: ', isEveryone19OrOlder);
+console.log('Exercise 7 correct result: ', false);
 
 
 /* -------------------- Exercise 8 -------------------- */
+let commentById = {};
+
+commentById = comments.find((comment) => {
+  if(comment.id === 823423) {
+    return comment;
+  }
+});
+
+console.log('Exercise 8 my result: ', commentById);
+console.log('Exercise 8 correct result: ', { text: 'Super good', id: 823423 });
 
 
 /* -------------------- Exercise 9 -------------------- */
+let idx = null;
+
+idx = comments.findIndex((commentID) => {
+  if(commentID.id === 123523) {
+    return commentID;
+  }
+});
+
+console.log('Exercise 9 my result: ', idx);
+console.log('Exercise 9 correct result: ', 3);
